@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/brenohq/world-cup-scoreboards#readme",
   "dependencies": {
-    "node-fetch": "^2.1.2"
+    "node-fetch": "^2.1.2",
+    "moji-translate": "latest"
   }
 }
