@@ -11,14 +11,15 @@ npm install
 
 Run the entry file.
 ```
-node index.js
+npm start
 ```
 
 Example output:
 ```
-> $ node index.js
-  
-  Russia 5 x 0 Saudi Arabia
-  Egypt 0 x 1 Uruguay
-  Morocco 0 x 0 Iran
+> $ npm start
+
+    Russia 5 x 0 Saudi Arabia
+    Egypt 0 x 1 Uruguay
+    Morocco 0 x 1 Iran
+    Portugal 3 x 3 Spain
 ```
