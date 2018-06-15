@@ -1,0 +1,22 @@
+{
+  "name": "world-cup-scoreboards",
+  "version": "1.0.0",
+  "description": "A Node.js CLI to show FIFA World Cup 2018 results in real time.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brenohq/world-cup-scoreboards.git"
+  },
+  "author": "Breno Henrique",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brenohq/world-cup-scoreboards/issues"
+  },
+  "homepage": "https://github.com/brenohq/world-cup-scoreboards#readme",
+  "dependencies": {
+    "node-fetch": "^2.1.2"
+  }
+}
