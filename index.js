@@ -13,13 +13,22 @@ function json (response) {
   return response.json()
 }
 
+function isCompletedOrInProgress(match) {
+    return match.status === 'completed' || match.status === 'in progress';
+}
+
+function buildResult(match) {
+  return translate.translate(`${match.home_team.country}`.replace(/ /g, '_'), true) + ` ${match.home_team.country} ${match.home_team.goals} x ${match.away_team.goals} ${match.away_team.country} ` + translate.translate(`${match.away_team.country}`.replace(/ /g, '_'), true);
+}
+
 fetch('http://worldcup.sfg.io/matches')
   .then(status)
   .then(json)
   .then(matches => {
-    matches.map(match => {
-      if (match.status == 'completed' || match.status == 'in progress')
-        console.log(translate.translate(`${match.home_team.country}`.replace(/ /g, '_'), true) + ` ${match.home_team.country} ${match.home_team.goals} x ${match.away_team.goals} ${match.away_team.country} ` + translate.translate(`${match.away_team.country}`.replace(/ /g, '_'), true))
-    })
+    return matches.filter(isCompletedOrInProgress);
+  })
+  .then(matches => {
+    matches.map(buildResult)
+      .forEach(console.log)
   })
   .catch(error => console.log('Request failed', error))
