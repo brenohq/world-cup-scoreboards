@@ -25,10 +25,8 @@ fetch('http://worldcup.sfg.io/matches')
   .then(status)
   .then(json)
   .then(matches => {
-    return matches.filter(isCompletedOrInProgress);
-  })
-  .then(matches => {
-    matches.map(buildResult)
-      .forEach(console.log)
+    matches.filter( isCompletedOrInProgress )
+           .map( buildResult )
+           .forEach( r => console.log( r ) );
   })
   .catch(error => console.log('Request failed', error))
